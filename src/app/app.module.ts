@@ -11,6 +11,11 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { StudentsComponent } from './components/students/students.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { PageComponent } from './components/page/page.component';
+
 
 @NgModule({
   declarations: [
@@ -19,9 +24,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminComponent,
     ProjectsComponent,
     TeachersComponent,
-    StudentsComponent
+    StudentsComponent,
+    PageComponent
   ],
   imports: [
+    MatFormFieldModule,
+    MatCardModule,
+    MatButtonModule,
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
