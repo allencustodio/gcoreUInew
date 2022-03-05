@@ -15,6 +15,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { PageComponent } from './components/page/page.component';
+import { HomeComponent } from './components/home/home.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 
 @NgModule({
@@ -25,13 +27,16 @@ import { PageComponent } from './components/page/page.component';
     ProjectsComponent,
     TeachersComponent,
     StudentsComponent,
-    PageComponent
+    PageComponent,
+    HomeComponent,
+    DetailComponent
   ],
   imports: [
     MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

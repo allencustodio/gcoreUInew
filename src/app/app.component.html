@@ -1,1 +1,46 @@
-<router-outlet></router-outlet>
+<div class="main">
+    <div class="user" #user>
+      <div class="notification">
+        <svg class="icon icon-bell">
+          <use href="./assets/icons.svg#icon-bell"></use>
+        </svg>
+        <span class="notification__circle circle-active"></span>
+      </div>
+      <div class="user__info">
+        <div class="circle-avatar">
+          <img id="avatar" src="./assets/img/illustration.jpeg" alt="" />
+        </div>
+        <div class="user-name">Allen C.</div>
+      </div>
+      <div class="dropdown">
+        <svg class="icon icon-down">
+          <use href="./assets/icons.svg#icon-chevron-small-down"></use>
+        </svg>
+      </div>
+    </div>
+    <nav class="navigation">
+      <div class="logo" #logo>
+        <img id="sitelogo" src="assets/img/logogcore.png" alt="">
+      </div>
+      <ul class="nav" #nav>
+        <li
+        class="nav__item"
+        *ngFor="let menu of menuList"
+        [routerLink]="menu.link"
+        (click)="onNavigate(menu.link)"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLinkActive
+        #routerLink="routerLinkActive"
+        [class.menu-active]="routerLink.isActive"
+      >
+        <svg class="icon {{ menu.icon }}">
+          <use attr.xlink:href="./assets/icons.svg#{{ menu.icon }}"></use>
+        </svg>
+        <a class="nav__link">{{ menu.name }}</a>
+      </li>
+      </ul>  
+    </nav>
+    <router-outlet></router-outlet>
+    <div class="detail" [@detail]="openState">
+      <router-outlet name="d"></router-outlet>
+  </div>  
